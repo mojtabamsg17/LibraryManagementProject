@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>فایل راهنما - قالب مدیریتی اچ‌یودی</title>
+
+  <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="assets/bootstrap/css/docs.css" rel="stylesheet">
+  <link href="assets/bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <div class="navbar navbar-inverse navbar-page">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#"><img src="assets/images/logo.png"
+            style="max-height: 16px; margin-top: 3px; display: block;"></a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active">
+              <a href="index.html">ورژن اچ تی ام ال</a>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <li>
+              <a href="change_log.html">تغییرات</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1 class="text-center"><img src="assets/images/logo.png" style="max-height: 60px" /> <span
+          class="version">v1.6</span></h1>
+      <p class="lead text-center"> قالب مدیریتی واکنشگرا بوت‌سترپ ورژن 5</p>
+      <p class="documented">فایل راهنما - </p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="well">
+          <p>
+            <strong>
+              آپدیت شده: 1400<br>
+              توسط: آفرید تیم
+            </strong>
+          </p>
+          <p>
+            اگر سوالی دارید که فراتر از محدوده این فایل راهنما است،
+            لطفا به ما  <a href="https://www.rtl-theme.com/" target="_blank">تیکت</a>  ارسال کنید
+            تلاش میکنیم بهترین پشتیبانی را فراهم کنیم.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <li><a href="#installation"><i class="icon-chevron-right"></i>نصب</a></li>
+          <li><a href="#file-structure"><i class="icon-chevron-right"></i>ساختار فایل</a></li>
+          <li><a href="#html-structure"><i class="icon-chevron-right"></i>ساختار اچ تی ام ال</a></li>
+          <li><a href="#css"><i class="icon-chevron-right"></i>سی اس اس</a></li>
+          <li><a href="#javascript"><i class="icon-chevron-right"></i>جاوااسکریپت</a></li>
+          <li><a href="#pageOptions"><i class="icon-chevron-right"></i>تنظیمات صفحه</a></li>
+          <li><a href="#pageThemeCover"><i class="icon-chevron-right"></i>تم و کاور صفحه</a></li>
+          <li><a href="#references"><i class="icon-chevron-right"></i>منابع</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="installation"><strong>آ) نصب </strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p>
+              تنها نیاز است که فایل کامپایل شده و مینیمایز سی اس اس و جی اس را در ساختار اچ تی ام ال خود قرار دهید
+            </p>
+            <pre class="prettyprint linenums">&lt;!-- Core CSS --&gt;
+&lt;link href="assets/css/vendor.min.css" rel="stylesheet" /&gt;
+&lt;link href="assets/css/app.min.css" rel="stylesheet" /&gt;
+
+&lt;!-- Core JS --&gt;
+&lt;script src="assets/js/vendor.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/js/app.min.js"&gt;&lt;/script&gt;
+</pre>
+            <div style="margin-bottom: 15px;"><b>یا</b></div>
+            <p>
+
+              یا اگر آشنایی با گالپ و اس سی اس اس دارید از آنها میتوانید برای به راه اندازی محیط توسعه وب سایت خود
+              استفاده کنید
+              <code>gulp</code> را در سیستم عامل خود نصب کنید ابتدا. <br />
+              شما ممکن است به مستندات رسمی نیاز داشته باشید مراجعه کنید تا آشنایی لازم برای اینکه چگونه محیط توسعه را
+              راه اندازی کنید پیدا کنید. <br>
+              <a href="https://gulpjs.com/docs/en/getting-started/quick-start" target="_blank">مشاهده راهنما</a>
+            </p>
+            <pre class="prettyprint linenums">cd /your-path-url/template_html/
+npm install 
+gulp
+
+// generate plugins command
+gulp plugins
+</pre>
+            <p>
+              مطمئن باشید آخرین ورژن از نود یعنی <code>6.9.x</code> و <code>ان پی ام 3.x.x</code> را داشته باشید با
+              اجرای دستور <code>node -v</code> و <code>npm -v</code> در ترمینال یا کنسول سیستم خود. ورژن های قبلی
+              ناسازگاری خواهند داشت.
+            </p>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="file-structure"><strong>ب) ساختار فایل</strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p>ساختار فایل موجود در اچ‌یودی </p>
+            <pre class="prettyprint linenums">template/
+├── dist/             // generated html / css / js files
+├── assets 
+    ├── css/         // css files
+    ├── img/         // image source files
+    ├── js/          // javascript source files
+    ├── plugins/     // plugins source files
+    └── webfonts/    // webfonts settings
+├── documentation    // documentation package 
+└── src/
+    ├── analytics.html/        // html files
+    ├── calendar.html          // html files
+    └── ...                    // html files
+    
+    
+</pre>
+
+            <p>ساختار فایل موجود در اچ‌یودی در صورت استتفاده از گالپ</p>
+            <pre class="prettyprint linenums">template/
+├── dist/             // generated html / css / js files
+├── gulpfile.js       // gulp settings
+├── package.json      // npm package installed
+└── src/
+    ├── html/         // html source files
+    ├── img/          // image source files
+    ├── js/           // javascript source files
+    └── scss/         // studio scss files
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="html-structure"><strong> پ ) ساختار اچ تی ام ال</strong> - <a href="#top">بالا</a></h3>
+            </div>
+
+            <p>در زیر ساختار کلی فایل و هسته اصلی سی اس اس / جی اس برای قالب مدیریتی ادمین آماده شده است . فایل های css
+              / js را در پوشه رو به رو میتوانید پیدا کنید <code>/dist/assets/</code> .</p>
+
+            <pre class="prettyprint linenums">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;HUD&lt;/title&gt;
+  &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" 
+        name="viewport" /&gt;
+ 
+  &lt;!-- core-css --&gt;
+  &lt;link href="assets/css/vendor.min.css" rel="stylesheet" /&gt;
+  &lt;link href="assets/css/app.min.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="app" class="app"&gt;
+    &lt;!-- app-header --&gt;
+    &lt;header id="header" class="app-header"&gt;... &lt;/header&gt;
+    
+    &lt;!-- app-sidebar --&gt;
+    &lt;sidebar id="sidebar" class="app-sidebar"&gt;... &lt;/sidebar&gt;
+    
+    &lt;!-- app-content --&gt;
+    &lt;div id="content" class="app-content"&gt;...&lt;/div&gt;
+    
+    &lt;!-- btn-scroll-top --&gt;
+    &lt;a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"&gt;&lt;i class="fa fa-arrow-up"&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- BEGIN core-js --&gt;
+  &lt;script src="assets/js/vendor.min.js"&gt;&lt;/script&gt;
+  &lt;script src="assets/js/app.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="css"><strong>ت) سی اس اس</strong> - <a href="#top">بالا</a></h3>
+            </div>
+
+            <p>تمام فایل های سی اس اس مورد استفاده در اچ‌یودی به دو فایل رو به رو کامپایل شده است <code>app.min.css</code> و
+              <code>vendor.min.css</code> با استفاده از گالپ. اگر شما <b>از گالپ استفاده نمیکنید</b>, فولدر زیر را کپی
+              کنید <code>/dist/assets/css</code> و <code>/dist/assets/webfonts</code> به فولدر دارایی های اپلیکیشن
+              خودتان</p>
+
+            <div style="margin-bottom: 5px;"><code>vendor.min.css</code></div>
+            <ol>
+              <li>فونت آوسام</li>
+              <li>جی کوئری یو آی</li>
+              <li>انیمیت سی اس اس</li>
+              <li>پیس لودر</li>
+            </ol>
+            <div style="margin-bottom: 5px;"><code>app.min.css</code></div>
+            <ol>
+              <li>بوت‌سترپ</li>
+              <li> فایل سی اس اس هسته اچ‌یودی </li>
+            </ol>
+            <pre class="prettyprint linenums">&lt;!-- core-css --&gt;
+&lt;link href="assets/css/vendor.min.css" rel="stylesheet" /&gt;
+&lt;link href="assets/css/app.min.css" rel="stylesheet" /&gt;
+
+&lt;!-- یا بدون vendor.min.css --&gt;
+&lt;link href="assets/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" /&gt;
+&lt;link href="assets/plugins/jquery-ui-dist/jquery-ui.min.css" rel="stylesheet" /&gt;
+&lt;link href="assets/plugins/animate.css/animate.min.css" rel="stylesheet" /&gt;
+&lt;link href="assets/plugins/pace-js/themes/black/pace-theme-flash.css" rel="stylesheet" /&gt;
+&lt;link href="assets/css/app.min.css" rel="stylesheet" /&gt;
+
+&lt;!-- core-css required folder --&gt;
+/dist/assets/css
+/dist/assets/webfonts
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="javascript"><strong>ث) جاوااسکریپت</strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p>این قالب 6 کتابخانه جاوااسکریپت را در دو فایل رو به رو کامپایل کرده است <code>app.min.js</code> و
+              <code>vendor.min.js</code> با استفاده از گالپ.اگر از گالپ استفاده نمیکنید, فولدر رو به رو را کپی کنید
+              <code>/dist/assets/js</code> به فولدر دارایی های اپلیکیشن خودتان.</p>
+
+            <div style="margin-bottom: 5px;"><code>vendor.min.js</code></div>
+            <ol>
+              <li>پیس لودر</li>
+              <li>جی کوئری</li>
+              <li>جی کوئری یو آی</li>
+              <li>بوت‌سترپ</li>
+              <li>اسلیم اسکرول</li>
+              <li>کوکی جاوااسکریپت</li>
+            </ol>
+            <div style="margin-bottom: 5px;"><code>app.min.js</code></div>
+            <ol>
+              <li>فایل های هسته جاوااسکریپت قالب اچ‌یودی</li>
+            </ol>
+            <pre class="prettyprint linenums">&lt;!-- core-js --&gt;
+&lt;script src="assets/js/vendor.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/js/app.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- یا بدون vendor.min.js --&gt;
+&lt;script src="assets/plugins/pace-js/pace.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/plugins/jquery/dist/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/plugins/jquery-ui-dist/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"&gt;&lt;/script&gt;
+&lt;script src="assets/plugins/js-cookie/src/js.cookie.js"&gt;&lt;/script&gt;
+&lt;script src="assets/js/app.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- core-js required folder --&gt;
+/dist/assets/js
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="pageOptions"><strong>ج) تنظیمات صفحه</strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p><b>سایدبار چسبیده</b>:</p>
+            <pre class="prettyprint linenums">&lt;div id="app" class="app app-sidebar-collapsed"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+            <p><b>ارتفاع کامل</b>:</p>
+            <pre class="prettyprint linenums">&lt;div id="app" class="app app-content-full-height"&gt;
+  ...
+  &lt;div id="content" class="app-content" data-scrollbar="true" data-height="100%" 
+       data-skip-mobile="true"&gt;
+     ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <p><b>تمام عرض:</b></p>
+            <pre class="prettyprint linenums">&lt;div id="app" class="app app-content-full-width"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+            <p><b>فوتر ثابت:</b></p>
+            <pre class="prettyprint linenums">&lt;div id="app" class="app app-footer-fixed"&gt;
+  ...
+  &lt;div id="footer" class="app-footer"&gt;
+    &copy; 1400 تمامی حقوق محفوظ است
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <p><b>پیس اودر در بالا</b></p>
+            <pre class="prettyprint linenums">&lt;body class="pace-top"&gt;
+  ...
+&lt;/body&gt;
+</pre>
+            <p><b>چینش باکس</b></p>
+            <pre class="prettyprint linenums">&lt;body class="pace-top"&gt;
+  &lt;div id="app" class="app app-boxed-layout"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="pageThemeCover"><strong>چ) کاور و تم صفحه</strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p>تم را به تگ رو به رو اضافه کنید <code>&lt;body&gt;</code> تا رنگ تم را بتوانید عوض کنید.</p>
+            <h4>آپشن های موجود در تم</h4>
+            <pre class="prettyprint linenums">&lt;body class="theme-red"&gt;...&lt;/body&gt;
+&lt;body class="theme-pink"&gt;...&lt;/body&gt;
+&lt;body class="theme-orange"&gt;...&lt;/body&gt;
+&lt;body class="theme-yellow"&gt;...&lt;/body&gt;
+&lt;body class="theme-lime"&gt;...&lt;/body&gt;
+&lt;body class="theme-green"&gt;...&lt;/body&gt;
+&lt;body class="theme-teal"&gt;...&lt;/body&gt;
+&lt;body class="theme-cyan"&gt;...&lt;/body&gt;
+&lt;body class="theme-blue"&gt;...&lt;/body&gt;
+&lt;body class="theme-purple"&gt;...&lt;/body&gt;
+&lt;body class="theme-indigo"&gt;...&lt;/body&gt;
+&lt;body class="theme-black"&gt;...&lt;/body&gt;
+</pre>
+            <p>کلاس کاور را به تگ رو به رو اضافه کنید <code>&lt;html&gt;</code> تا بتوانید کاور صفحه را تغییر دهید.</p>
+            <h4>آپشن های موجود در تم</h4>
+            <pre class="prettyprint linenums">&lt;html class="bg-cover-2"&gt;
+&lt;html class="bg-cover-3"&gt;
+&lt;html class="bg-cover-4"&gt;
+&lt;html class="bg-cover-5"&gt;
+</pre>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="page-header">
+              <h3 id="references"><strong>ح) منابع</strong> - <a href="#top">بالا</a></h3>
+            </div>
+            <p>
+              منابع استفاده شده در این قالب در این زیر لیست شده اند
+            </p>
+            <p><b>پلاگین جی کوئری</b></p>
+            <ol style="margin-bottom: 20px">
+              <li><b>انیمیت سی اس اس</b>: <a target="_blank"
+                  href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a></li>
+              <li><b>اپکس چارت</b>: <a target="_blank" href="https://apexcharts.com/">https://apexcharts.com/</a></li>
+              <li><b>آپلود فایل جی کوئری</b>: <a target="_blank"
+                  href="https://blueimp.github.io/jQuery-File-Upload/">https://blueimp.github.io/jQuery-File-Upload/</a>
+              </li>
+              <li><b>بوت‌سترپ</b>: <a target="_blank" href="https://getbootstrap.com/">http://getbootstrap.com/</a></li>
+              <li><b>انتخابگر تاریخ بوت‌سترپ</b>: <a target="_blank"
+                  href="https://uxsolutions.github.io/bootstrap-datepicker/">https://uxsolutions.github.io/bootstrap-datepicker/</a>
+              </li>
+              <li><b>انتخابگر رنج تاریخ بوت‌سترپ</b>: <a target="_blank"
+                  href="http://www.daterangepicker.com/">http://www.daterangepicker.com/</a></li>
+              <li><b>اسلایدر بوت‌سترپ</b>: <a target="_blank"
+                  href="https://www.eyecon.ro/bootstrap-slider/">https://www.eyecon.ro/bootstrap-slider/</a></li>
+              <li><b>انتخابگر زمان بوت‌سترپ</b>: <a target="_blank"
+                  href="https://jdewit.github.io/bootstrap-timepicker/">http://jdewit.github.io/bootstrap-timepicker/</a>
+              </li>
+              <li><b>جدول بوت‌سترپ</b>: <a target="_blank"
+                  href="https://bootstrap-table.com/">https://bootstrap-table.com/</a></li>
+              <li><b>بوت‌سترپ تایپ هد</b>: <a target="_blank"
+                  href="https://github.com/bassjobsen/Bootstrap-3-Typeahead/">https://github.com/bassjobsen/Bootstrap-3-Typeahead/</a>
+              </li>
+              <li><b>چارت جی‌اس</b>: <a target="_blank" href="https://chartjs.org/">https://chartjs.org</a></li>
+              <li><b>جدول داده</b>: <a target="_blank" href="https://datatables.net/">https://datatables.net/</a></li>
+              <li><b>فونت اوسام</b>: <a target="_blank" href="https://fontawesome.com/">https://fontawesome.com/</a>
+              </li>
+              <li><b>فول کلندر</b>: <a target="_blank" href="https://fullcalendar.io/">https://fullcalendar.io/</a></li>
+              <li><b>جی کوئری</b>: <a target="_blank" href="https://jquery.com/">https://jquery.com/</a></li>
+              <li><b>جی کوئری یو آی</b>: <a target="_blank" href="https://jqueryui.com/">https://jqueryui.com/</a></li>
+              <li><b>جی کوئری ماسک اینپوت</b>: <a target="_blank"
+                  href="https://github.com/excellalabs/jquery.maskedinput">https://github.com/excellalabs/jquery.maskedinput</a>
+              </li>
+              <li><b>جاوااسکریپت کوکی</b>: <a target="_blank"
+                  href="https://github.com/js-cookie/js-cookie">https://github.com/js-cookie/js-cookie</a></li>
+              <li><b>جی وکتور مپ</b>: <a target="_blank" href="http://jvectormap.com/">http://jvectormap.com/</a></li>
+              <li><b>تگ ایت</b>: <a target="_blank"
+                  href="https://aehlke.github.io/tag-it/">http://aehlke.github.io/tag-it/</a></li>
+              <li><b>سلکت پیکر</b>: <a target="_blank" href="https://picker.uhlir.dev/">https://picker.uhlir.dev/</a>
+              </li>
+              <li><b>اسپکتروم</b>: <a target="_blank"
+                  href="https://seballot.github.io/spectrum/">https://seballot.github.io/spectrum/</a></li>
+              <li><b>ک بی دبیلو </b>: <a target="_blank"
+                  href="https://github.com/kbwood/countdown">https://github.com/kbwood/countdown</a></li>
+              <li><b>مومنت</b>: <a target="_blank" href="http://momentjs.com/">http://momentjs.com/</a></li>
+              <li><b>پیس</b>: <a target="_blank"
+                  href="https://github.com/HubSpot/pace">https://github.com/HubSpot/pace</a></li>
+              <li><b>پرفکت اسکرولبار</b>: <a target="_blank"
+                  href="https://github.com/mdbootstrap/perfect-scrollbar">https://github.com/mdbootstrap/perfect-scrollbar</a>
+              </li>
+              <li><b>فوتو سوییفت</b>: <a target="_blank" href="https://photoswipe.com/">https://photoswipe.com/</a></li>
+              <li><b>پاپر جی اس</b>: <a target="_blank" href="https://popper.js.org/">https://popper.js.org/</a></li>
+              <li><b>سامرنوت</b>: <a target="_blank"
+                  href="https://github.com/summernote/summernote">https://github.com/summernote/summernote</a></li>
+            </ol>
+            <p><b>تصاویر</b></p>
+            <ol>
+              <li><b>ان اسپلاش</b>: <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a></li>
+              <li><b>فری پیک</b>: <a target="_blank" href="https://freepik.com/">https://freepik.com/</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container text-left">
+      <p>از شما بابت خرید این قالب ممنونیم. در صورت داشتن هر گونه سوال و مشکلی درباره این قالب میتوانید به ما تیکت ارسال
+        نمایید.</p>
+      <br />
+      <p class="append-bottom alt large"><strong> آفرید تیم </strong></p>
+      <p><a href="#top">بالا</a></p>
+    </div>
+  </footer>
+  <script src="assets/bootstrap/js/jquery.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-transition.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-alert.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-modal.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-dropdown.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-scrollspy.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-tab.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-tooltip.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-popover.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-button.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-collapse.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-carousel.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-typeahead.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/bootstrap-affix.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/holder/holder.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="assets/bootstrap/js/google-code-prettify/prettify.js" type="03b25a8cf22ddd5f3397ec02-text/javascript">
+  </script>
+  <script src="assets/bootstrap/js/application.js" type="03b25a8cf22ddd5f3397ec02-text/javascript"></script>
+  <script src="../assets/plugins/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+    data-cf-settings="03b25a8cf22ddd5f3397ec02-|49" defer=""></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+    integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+    data-cf-beacon='{"rayId":"6e58f8f8694d8ec2","version":"2021.12.0","r":1,"token":"4db8c6ef997743fda032d4f73cfeff63","si":100}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
